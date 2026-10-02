@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Weather App untuk melihat informasi cuaca berdasarkan kota menggunakan OpenWeatherMap API"
+    >
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="app-header">
+            <h1>🌤️ Weather App </h1>
+            <p>Cek informasi cuaca berdasarkan kota</p>
+        </header>
+
+
+        <section class="search-section" aria-label="Pencarian cuaca">
+
+            <form id="weatherForm">
+
+                <label for="cityInput">
+                    Nama Kota
+                </label>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        name="city"
+                        placeholder="Contoh: Medan"
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit" id="searchButton">
+                        Cari
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <section
+            class="status-section"
+            aria-live="polite"
+            aria-busy="false"
+        >
+
+            <p id="loading" class="loading hidden">
+                ⏳ Memuat data cuaca...
+            </p>
+
+            <p id="errorMessage" class="error hidden"></p>
+
+        </section>
+
+
+        <section
+            id="weatherResult"
+            class="weather-result hidden"
+            aria-label="Informasi cuaca"
+        >
+
+            <h2 id="cityName">-</h2>
+
+            <img
+                id="weatherIcon"
+                src=""
+                alt="Ikon cuaca"
+            >
+
+            <p id="temperature">-°C</p>
+
+            <div class="unit-buttons">
+
+                <button
+                    type="button"
+                    id="celsiusButton"
+                    class="active-unit"
+                >
+                    °C
+                </button>
+
+                <button
+                    type="button"
+                    id="fahrenheitButton"
+                >
+                    °F
+                </button>
+
+            </div>
+
+            <p id="description">-</p>
+
+            <p id="humidity">
+                💧 Kelembaban: -%
+            </p>
+
+        </section>
+
+
+        <section class="history-section">
+
+            <h2>Riwayat Pencarian</h2>
+
+            <ul id="historyList">
+                <li>Belum ada riwayat pencarian.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Weather App</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
